@@ -17,7 +17,6 @@ except ImportError:
     )
 
 
-
 class GymmaWrapper(MultiAgentEnv):
     def __init__(
         self,
@@ -131,7 +130,7 @@ class GymmaWrapper(MultiAgentEnv):
         """Returns initial observations and info"""
         obs, info = self._env.reset(seed=seed, options=options)
         self._obs = self._pad_observation(obs)
-        return self._obs, info
+        return self.get_obs(), self.get_state()
 
     def render(self):
         self._env.render()
