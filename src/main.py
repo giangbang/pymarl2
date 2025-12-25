@@ -102,7 +102,10 @@ if __name__ == '__main__':
     ex.add_config(config_dict)
 
     # Save to disk by default for sacred
-    map_name = parse_command(params, "env_args.map_name", config_dict['env_args']['map_name'])
+    try:
+        map_name = parse_command(params, "env_args.map_name", config_dict['env_args']['map_name'])
+    except:
+        map_name = parse_command(params, "env_args.key", config_dict['env_args']['key'])
     algo_name = parse_command(params, "name", config_dict['name']) 
     file_obs_path = join(results_path, "sacred", map_name, algo_name)
     
