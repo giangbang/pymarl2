@@ -1,8 +1,10 @@
 #!/bin/sh
 algo="qtran"
 seed_max=1
-scenarios=( "MMM" "MMM2" "corridor" "bane_vs_bane" "25m_vs_30m" "3s5z_vs_3s6z")
-total_times=( 1_000_000 2_000_000 3_000_000 2_000_000 2_000_000 5_000_000 )
+# scenarios=( "MMM" "MMM2" "corridor" "bane_vs_bane" "25m_vs_30m" "3s5z_vs_3s6z")
+# total_times=( 1_000_000 2_000_000 3_000_000 2_000_000 2_000_000 5_000_000 )
+scenarios=( "MMM" "MMM2" "corridor" "3s5z_vs_3s6z")
+total_times=( 1_000_000 2_000_000 3_000_000 5_000_000 )
 
 
 n_exp=${#scenarios[@]}
@@ -16,3 +18,4 @@ for ((i=0; i<n_exp; i++)); do
                 env_args.map_name="custom-smaclite/${scenario}" t_max=${total_ts}
     done
 done
+
