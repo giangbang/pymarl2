@@ -94,7 +94,7 @@ class SMACliteWrapper(MultiAgentEnv):
     def reset(self, seed=None, options=None):
         """Returns initial observations and info"""
         obs = self.env.reset(seed=seed, options=options)
-        return obs, {}
+        return self.get_obs(), self.get_state()
 
     def render(self):
         self.env.render()
